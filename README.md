@@ -48,8 +48,7 @@ npm install
 Ejecuta en modo desarrollo (con recarga automática):
 
 npm run dev
-# o directamente:
-# nodemon server.js
+# o directamente: nodemon server.js
 
 Abre en tu navegador: http://localhost:3000
 
@@ -65,3 +64,4 @@ Para ajustes de configuración (puerto, etc.), utiliza variables de entorno (pro
 
 
 IMPORTANTE: CREAR CARPETA data CON ARCHIVOS post-json [] Y users.json {}
+ 
