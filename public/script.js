@@ -155,7 +155,7 @@ async function loadPosts() {
   document.querySelectorAll('.delete').forEach(btn =>
     btn.addEventListener('click', () => interactDelete(btn.dataset.id))
   );
-}
+}  
 
 // Inicializar
 btnList.click();
