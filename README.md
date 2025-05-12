@@ -61,3 +61,7 @@ Las contraseñas se guardan hasheadas en data/users.json.
 El endpoint POST /clear borra todo el historial (no expuesto en UI).
 
 Para ajustes de configuración (puerto, etc.), utiliza variables de entorno (process.env).
+
+
+
+IMPORTANTE: CREAR CARPETA data CON ARCHIVOS post-json [] Y users.json {}
