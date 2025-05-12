@@ -1,0 +1,476 @@
+/* ================================
+   VARIABLES & RESET (base.css)
+   Definir colores, tipografías y reset básico
+   ================================ */
+
+   :root {
+    --color-bg: #000;
+    --color-surface: #121212;
+    --color-primary: #1da1f2;
+    --color-text: #e6e6e6;
+    --color-muted: #657786;
+    --color-error: #e0245e;
+    --font-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --border-radius: 12px;
+    --spacing: 16px;
+  }
+  
+  /* Reset minimal */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html, body {
+    height: 100%;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-base);
+    line-height: 1.5;
+  }
+  
+  /* ================================
+     LAYOUT (layout.css)
+     Contenedor principal y navegación
+     ================================ */
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing);
+  }
+  
+  nav {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    gap: var(--spacing);
+    margin-bottom: var(--spacing);
+    background: var(--color-surface);
+    padding: var(--spacing);
+    border-radius: var(--border-radius);
+  }
+  
+  /* ================================
+     TYPOGRAPHY (typography.css)
+     Títulos, párrafos y textos misc.
+     ================================ */
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing);
+    color: var(--color-text);
+  }
+  
+  /* ================================
+     COMPONENTES: Botones (buttons.css)
+     ================================ */
+  
+  button {
+    background: var(--color-primary);
+    color: #fff;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s ease;
+  }
+  button:hover {
+    background: #0d8ddb;
+  }
+  button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  /* ================================
+     COMPONENTES: Formularios (forms.css)
+     ================================ */
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+    background: var(--color-surface);
+    padding: var(--spacing);
+    border-radius: var(--border-radius);
+  }
+  
+  input[type="text"], textarea {
+    background: #181818;
+    color: var(--color-text);
+    border: 1px solid #333;
+    padding: 0.75em;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    resize: vertical;
+  }
+  input::placeholder, textarea::placeholder {
+    color: var(--color-muted);
+  }
+  
+  /* ================================
+     SECCIONES (views.css)
+     ================================ */
+  
+  .view {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: var(--spacing);
+  }
+  
+  /* ================================
+     COMPONENTES: Lista de Posts (posts.css)
+     ================================ */
+  
+  #posts {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+  }
+  
+  .post {
+    background: var(--color-surface);
+    padding: var(--spacing);
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    transition: background 0.2s ease;
+  }
+  .post:hover {
+    background: #1a1a1a;
+  }
+  
+  .post h3 {
+    font-size: 1.2rem;
+  }
+  .post p {
+    font-size: 1rem;
+    color: var(--color-text);
+  }
+  
+  .meta {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--spacing);
+    font-size: 0.9rem;
+    color: var(--color-muted);
+  }
+  .meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+  }
+  
+  /* ================================
+     UTILIDADES (utilities.css)
+     ================================ */
+  
+  .error {
+    color: var(--color-error);
+    margin-top: 0.5em;
+    font-size: 0.9rem;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+
+
+/* ================================
+   SIDEBAR (sidebar.css)
+   ================================ */
+   .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background: var(--color-surface);
+    padding: var(--spacing);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing);
+    border-right: 1px solid #333;
+  }
+  
+  .logo {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing);
+  }
+  
+  .menu {
+    list-style: none;
+    width: 100%;
+  }
+  
+  .menu li + li {
+    margin-top: var(--spacing);
+  }
+  
+  .menu button {
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    color: var(--color-text);
+    border: none;
+    padding: 0.5em;
+    border-radius: var(--border-radius);
+    transition: background 0.2s;
+  }
+  
+  .menu button:hover {
+    background: #1a1a1a;
+  }
+  
+  .main-content {
+    margin-left: 200px; /* espacio para el sidebar */
+    padding: var(--spacing);
+    width: calc(100% - 200px);
+  }
+
+  
+
+
+/* ================================
+   Notificaciones (notifications.css)
+   ================================ */
+   .notification {
+    position: fixed;
+    top: calc(var(--header-height) + var(--spacing));
+    right: var(--spacing);
+    background: var(--color-primary);
+    color: #fff;
+    padding: 0.75em 1.5em;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 900; /* más bajo que header y sidebar */
+  }
+  .notification.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ================================
+   Modal de confirmación (modal.css)
+   ================================ */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+  
+  .modal.hidden {
+    display: none;
+  }
+  
+  .modal-content {
+    background: var(--color-surface);
+    padding: var(--spacing);
+    border-radius: var(--border-radius);
+    max-width: 320px;
+    width: 90%;
+    text-align: center;
+  }
+  
+  .modal-content p {
+    margin-bottom: var(--spacing);
+    font-size: 1rem;
+    color: var(--color-text);
+  }
+  
+  .modal-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing);
+  }
+  
+  .modal-actions button {
+    flex: 1;
+    padding: 0.5em;
+  }
+  
+
+
+
+
+/* posts.css */
+.post-date {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  margin-top: 0.25em;
+}
+
+/* modal.css (reusa estilos previos de confirm-modal) */
+#pwd-modal .modal-content input {
+  width: 100%;
+  margin-bottom: var(--spacing);
+  background: #181818;
+  border: 1px solid #333;
+  color: var(--color-text);
+  padding: 0.5em;
+  border-radius: var(--border-radius);
+}
+
+
+
+/* 1) Asegurar que el input[type="password"] use el mismo estilo */
+input[type="password"] {
+  background: #181818;
+  color: var(--color-text);
+  border: 1px solid #333;
+  padding: 0.75em;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+}
+
+/* 2) Mobile-first: ajustar el layout para móviles */
+body {
+  padding: var(--spacing);
+}
+.sidebar {
+  position: static;
+  width: 100%;
+  height: auto;
+  border-right: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.main-content {
+  margin-left: 0;
+  width: 100%;
+}
+
+/* Posts y formulario ocupen 100% en móvil */
+.view, .form-post, #posts {
+  max-width: 100%;
+}
+
+/* 3) Tablet & desktop: cuando el ancho sea ≥ 768px, recuperamos sidebar fijo */
+@media (min-width: 768px) {
+  body {
+    display: flex;
+  }
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    flex-direction: column;
+    border-right: 1px solid #333;
+  }
+  .main-content {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+  }
+  nav, .view, form {
+    max-width: 600px;
+    margin: 0 auto var(--spacing);
+  }
+}
+
+/* 4) Ajustes de tipografía y espaciado para móviles pequeños */
+@media (max-width: 480px) {
+  :root {
+    --spacing: 12px;
+  }
+  h2 {
+    font-size: 1.25rem;
+  }
+  button {
+    font-size: 0.9rem;
+    padding: 0.4em 0.8em;
+  }
+  .post {
+    padding: 12px;
+  }
+  .post-header, .post-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .post-actions button {
+    margin-bottom: 8px;
+    width: 100%;
+  }
+}
+
+/* ===== LAYOUT GENERAL ===== */
+body {
+  display:flex; min-height:100vh;
+}
+.sidebar {
+  background: var(--color-surface);
+  padding: var(--spacing);
+  width: 200px;
+  flex-shrink: 0;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+.main-content {
+  flex:1;
+  padding: var(--spacing);
+  overflow-x:hidden;
+}
+
+/* ===== HAMBURGUESA ===== */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: var(--spacing);
+  left: var(--spacing);
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  padding: 0.5em 0.75em;
+  border-radius: var(--border-radius);
+  font-size: 1.5rem;
+  z-index: 1100;
+}
+
+/* ===== MEDIA QUERY MÓVIL ===== */
+@media (max-width: 767px) {
+  /* Botón hamburguesa visible */
+  .hamburger {
+    display: block;
+    z-index: 1000;
+  }
+
+  /* Sidebar oculta por defecto */
+  .sidebar {
+    transform: translateX(-100%);
+    z-index: 950; /* debajo del botón */
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  /* Contenido principal al frente */
+  .main-content {
+    margin-left: 0;
+    position: relative;
+    z-index: 800;
+  }
+}

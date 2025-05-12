@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Red Social</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">MiniRed</div>
+    <button id="btn-toggle-menu" class="hamburger">☰</button>
+  </header>
+
+  <div class="sidebar" id="sidebar">
+    <ul class="menu">
+      <li><button id="btn-new">✏️ Nuevo Post</button></li>
+      <li><button id="btn-list">💬 Ver Posts</button></li>
+    </ul>
+  </div>
+  
+  <main class="main-content">
+    <div id="notification" class="notification hidden"></div>
+
+      <div id="pwd-modal" class="modal hidden">
+        <div class="modal-content">
+          <p>Ingresa tu contraseña para eliminar:</p>
+          <input type="password" id="pwd-input" placeholder="Contraseña">
+          <div class="modal-actions">
+            <button id="pwd-cancel">Cancelar</button>
+            <button id="pwd-confirm">Eliminar</button>
+          </div>
+        </div>
+      </div>        
+  
+
+
+      <section id="view-new" class="view">
+        <h2>Crear Post</h2>
+          <form id="form-post">
+            <input type="text" id="name" placeholder="Tu nombre" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <textarea id="message" placeholder="Tu mensaje (mín. 5 caracteres)" required></textarea>
+            <button type="submit">Publicar</button>
+          </form>
+          <div id="error" class="error"></div>
+      </section>
+
+      <section id="view-list" class="view" style="display:none;">
+        <h2>Posts</h2>
+          <ul id="posts"></ul>
+      </section>
+    </div>
+  </main>
+
+  <script src="menu-toggle.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
